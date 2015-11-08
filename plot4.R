@@ -16,8 +16,13 @@ filter_criteria <- power_data$Date >= start_dt & power_data$Date <=end_dt
 filter_data <- power_data[filter_criteria, ]
 
 # Step 6: Transform filtered data frame's Global_active_power, Global_reactive_power, Voltage and Sub metering features to numeric type
-filter_data <- transform(filter_data, Global_active_power=as.numeric(Global_active_power), Global_reactive_power=as.numeric(Global_reactive_power), Voltage=as.numeric(Voltage))
-filter_data <- transform(filter_data, Sub_metering_1=as.numeric(Sub_metering_1), Sub_metering_2=as.numeric(Sub_metering_2), Sub_metering_3=as.numeric(Sub_metering_3))
+filter_data <- transform(filter_data, Global_active_power=as.numeric(as.character(Global_active_power)), 
+                                        Global_reactive_power=as.numeric(as.character(Global_reactive_power)), 
+                                        Voltage=as.numeric(as.character(Voltage)))
+
+filter_data <- transform(filter_data, Sub_metering_1=as.numeric(as.character(Sub_metering_1)), 
+                                        Sub_metering_2=as.numeric(as.character(Sub_metering_2)), 
+                                        Sub_metering_3=as.numeric(as.character(Sub_metering_3)))
 
 # Step 7: Generate plots using png device
 png(filename = "plot4.png", height = 480, width = 480)

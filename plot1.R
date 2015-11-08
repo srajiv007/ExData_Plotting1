@@ -16,7 +16,7 @@ filter_criteria <- power_data$Date >= start_dt & power_data$Date <=end_dt
 filter_data <- power_data[filter_criteria, ]
 
 # Step 6: Transform filtered data frame's Global_active_power to numeric type
-filter_data <- transform(filter_data, Global_active_power=as.numeric(Global_active_power))
+filter_data <- transform(filter_data, Global_active_power=as.numeric(as.character(Global_active_power)))
 #nrow(filter_data)
 
 # Step 7: Generate plots using png device

@@ -16,7 +16,7 @@ filter_criteria <- power_data$Date >= start_dt & power_data$Date <=end_dt
 filter_data <- power_data[filter_criteria, ]
 
 # Step 6: Transform filtered data frame's Sub metering features to numeric type
-filter_data <- transform(filter_data, Sub_metering_1=as.numeric(Sub_metering_1), Sub_metering_2=as.numeric(Sub_metering_2), Sub_metering_3=as.numeric(Sub_metering_3))
+filter_data <- transform(filter_data, Sub_metering_1=as.numeric(as.character(Sub_metering_1)), Sub_metering_2=as.numeric(as.character(Sub_metering_2)), Sub_metering_3=as.numeric(as.character(Sub_metering_3)))
 #nrow(filter_data)
 
 # Step 7: Generate plots using png device
