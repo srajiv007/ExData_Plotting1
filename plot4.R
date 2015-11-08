@@ -32,7 +32,7 @@ with(filter_data, plot(DateTime, Voltage, type="l", main = "", xlab="datetime", 
 with(filter_data,  plot(DateTime, Sub_metering_1, main = "", xlab="", ylab="Energy sub metering", type = "l", col="black"))
 with(filter_data,  lines(DateTime, Sub_metering_2, main = "", xlab="", ylab="", type = "l", col=506))
 with(filter_data,  lines(DateTime, Sub_metering_3, main = "", xlab="", ylab="", type = "l", col="blue"))
-legend("topright", col=c("black", 506, "blue"), lty="solid", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+legend("topright", bty="n", col=c("black", 506, "blue"), lty="solid", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 
 #Plot 4: Global_reactive_power vs. DateTime
 with(filter_data, plot(DateTime, Global_reactive_power, type="l", main = "", xlab="datetime", ylab = "Global_reactive_power", col = "black"))
